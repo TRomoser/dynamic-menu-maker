@@ -10,7 +10,20 @@ const menuSchema = new Schema({
       }, 
       userName: String,
       userAvatar: String,
-      
+      menuType: {
+        type: String,
+        require: true,
+        enum: ['Breakfast', 'Brunch', 'Lunch', 'Happy Hour', 'Dinner', 
+        'Dessert', 'Drink', 'Special'],
+        default: 'Dinner',
+        available: {
+            type: Boolean,
+            default: false
+        }
+      },
+      userName: String,
+    }, {
+        timestamps: true
 })
 
 module.exports = mongoose.model('Menu', menuSchema);
