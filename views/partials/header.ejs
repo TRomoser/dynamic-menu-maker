@@ -10,9 +10,15 @@
 <body>
   <h1>dM^2</h1>
   <nav>
-    <a href="/">Home</a>
-    <a href="/">Sign Up</a>
-    <img src="">
+    <img src="/">
+    <a href="/menus" <%- title === 'All Movies' ? 'class="active"' : '' %>>ALL MENUS</a>
+    <% if (user) { %>
+      <a href="/menuItems/new"    <%- title === 'Add Menu Item' ? 'class="active"' : '' %>>
+          ADD PERFORMER</a>
+      <a href="/menus/new" <%- title === 'Add Menu' ? 'class="active"' : '' %>>ADD MENU</a>
+      <a href="/logout">LOG OUT</a>
+    <% } else { %>
+      <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% } %>
   </nav>
-  <main>
     <h1><%= title %></h1>
