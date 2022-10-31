@@ -1,6 +1,21 @@
 <%- include('../partials/header') %>
 
-
+<form id="new-menu-item" action="/menuItems" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Price:</label>
+    <input type="number" name="price">
+    <label>Description:</label>
+    <input type="text" name="description">
+    <label>Images:</label>
+    <input type="text" name="images">
+    <label>Add Ons:</label>
+    <input type="text" name="addOn">
+    <label>Add On Price:</label>
+    <input type="number" name="addOnPrice">
+    <label>Allergens:</label>
+    <input type="text" name="allergens">
+</form>
 
 
 <%- include('../partials/footer') %>

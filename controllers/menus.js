@@ -1,5 +1,5 @@
-const Menu = require('../models/menu')
-const MenuItem = require('../models/menuItem')
+const Menu = require('../models/menu');
+const MenuItem = require('../models/menuItem');
 
 module.exports = {
     index
