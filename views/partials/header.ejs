@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title><%= title %></title>
 </head>
 <body>
   <h1>dM^2</h1>
   <nav>
-    <img src="https://cdn-icons-png.flaticon.com/512/2836/2836601.png">
+    <img id="menu-icon" src="https://cdn-icons-png.flaticon.com/512/2836/2836601.png">
     <a href="/menus" <%- title === 'All Movies' ? 'class="active"' : '' %>>ALL MENUS</a>
     <% if (user) { %>
       <a href="/menus/new" <%- title === 'Add Menu' ? 'class="active"' : '' %>>ADD MENU</a>

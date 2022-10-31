@@ -1,6 +1,21 @@
 <%- include('../partials/header') %>
 
-
+<section id="menu-item-show">
+    <div>Name: </div>
+    <div><%= menuItem.name %></div>
+    <div>Price: </div>
+    <div><%= menuItem.price %></div>
+    <div>Description: </div>
+    <div><%= menuItem.description %></div>
+    <div>Images: </div>
+    <img src="url(<%= menuItem.image %>)" alt="<%= menuItem.name %>">>
+    <div>Add-Ons:</div>
+    <div><%= menuItem.addOn %></div>
+    <div>Price of add-on:</div>
+    <div><%= menuItem.addOnPrice %></div>
+    <div>Allergens: </div>
+    <div><%= menuItem.allergens %></div>
+</section>
 
 
 <%- include('../partials/footer') %>
