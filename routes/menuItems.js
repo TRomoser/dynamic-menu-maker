@@ -3,11 +3,15 @@ const router = express.Router();
 const menuItemsCtrl = require('../controllers/menuItems');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-// All routes start with '/menus'
+// All routes start with '/'
 
-// GET /menus (display all menus)
-router.get('/menuItems', menuItemsCtrl.index);
-// 
+// GET /menuItems (display all menu items)
+// router.get('/menuItems', menuItemsCtrl.index);
+
+
+// GET /menuItems/new (display a form for entering a new menu item)
 router.get('/menuItems/new', ensureLoggedIn, menuItemsCtrl.new);
+// POST /menuItems (create new menu item)
+
 
 module.exports = router;
