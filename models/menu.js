@@ -7,9 +7,7 @@ const menuSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-      }, 
-      userName: String,
-      userAvatar: String,
+      },
       menuType: {
         type: String,
         require: true,
@@ -21,7 +19,10 @@ const menuSchema = new Schema({
             default: false
         }
       },
-      userName: String,
+      contents: [{
+        type: Schema.Types.ObjectId,
+        ref: 'MenuItems'
+      }]
     }, {
         timestamps: true
 })
