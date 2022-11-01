@@ -4,7 +4,8 @@ const MenuItem = require('../models/menuItem');
 module.exports = {
     index,
     new: newItem,
-    create
+    create,
+    addToMenu
 }
 
 function index(req, res) {
@@ -24,8 +25,18 @@ function create(req,res) {
     });
 }
 
-function update(req, res) {
-    req.body.active = !!req.body.active;
-    Skill.update(req.params.id, req.body);
-    res.redirect(`/skills/${req.params.id}`);
+function addToMenu(req, res) {
+    Menu.findById(req.params.id, function(err, menu) {
+        menu.contents.push(req.body.menuItemId);
+        menu.save(function(err) {
+            res.redirect(`/menus/${menu._id}`);
+        });
+    });
 }
+
+
+// function update(req, res) {
+//     req.body.active = !!req.body.active;
+//     Skill.update(req.params.id, req.body);
+//     res.redirect(`/skills/${req.params.id}`);
+// }

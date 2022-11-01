@@ -11,5 +11,7 @@ router.get('/menuItems', menuItemsCtrl.index);
 router.get('/menuItems/new', ensureLoggedIn, menuItemsCtrl.new);
 // POST /menuItems (create new menu item)
 router.post('/menuItems', menuItemsCtrl.create)
+// POST /menus/:id/menuItems (add menu items to menu)
+router.post('/menus/:id/menuItems', ensureLoggedIn, menuItemsCtrl.addToMenu)
 
 module.exports = router;

@@ -12,12 +12,33 @@
             <tr>
                 <td><%= m.name %></td>
                 <td><%= m.menuType %></td>
-                <td></td>
+                <td>
+                    <form 
+                    action="/menus/<%= m.id %>?_method=DELETE" 
+                    method="POST"
+                    class="delete-form">
+                        <button type="submit">Delete Menu</button>
+                    </form>
+                </td>
             </tr>
             
             <% }); %>
     </tbody>
 </table>
-
+<br><br>
+<hr>
+<br>
+<h3>Add a new Menu</h3>
+<form id="new-menu" action="/menus" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Menu Type:</label>
+        <select name="menuType">
+            <option value="Lunch">Lunch</option>
+            <option value="Happy Hour">Happy Hour</option>
+            <option value="Dinner">Dinner</option>
+        </select>
+        <input type="submit" value="Add Menu">
+</form>
 
 <%- include('../partials/footer') %>

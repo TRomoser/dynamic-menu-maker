@@ -11,7 +11,7 @@ module.exports = {
 
 function index(req, res) {
     Menu.find({}, function(err, menus) {
-        res.render('menus/index', { title: 'All Menus', menus });
+        res.render('menus/index', { title: 'Menus', menus });
     });
 }
 

@@ -13,12 +13,11 @@
 <body>
   <h1>dM^2</h1>
   <nav>
-    <img id="menu-icon" src="https://cdn-icons-png.flaticon.com/512/2836/2836601.png">
-    <a href="/menus" <%- title === 'All Movies' ? 'class="active"' : '' %>>ALL MENUS</a>
+    <a href="/menus" <%- title === 'All Movies' ? 'class="active"' : '' %>>MENUS</a>
     <% if (user) { %>
-      <a href="/menus/new" <%- title === 'Add Menu' ? 'class="active"' : '' %>>ADD MENU</a>
+      <img id="menu-icon" src="https://cdn-icons-png.flaticon.com/512/2836/2836601.png">
       <a href="/menuItems/new"    <%- title === 'Add Menu Item' ? 'class="active"' : '' %>>
-        ADD DISH</a>
+        MENU ITEMS</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>

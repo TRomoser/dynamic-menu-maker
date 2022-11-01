@@ -1,21 +1,21 @@
 <%- include('../partials/header') %>
 
 <form id="new-menu-item" action="/menuItems" method="POST">
-    <label>Name:</label>
-    <input type="text" name="name"><br>
-    <label>Price:</label>
-    <input type="number" name="price"><br>
-    <label>Description:</label>
-    <input type="text" name="description"><br>
-    <label>Image-url:</label>
-    <input type="text" name="image"><br>
-    <label>Add Ons:</label>
-    <input type="text" name="addOn"><br>
-    <!-- <label>Add On Price:</label>
-    <input type="number" name="addOnPrice"> -->
-    <label>Allergens:</label>
-    <input type="text" name="allergens"><br>
-    <input type="submit" value="Add Dish">
+    <table>
+        <label>Name:</label>
+        <input type="text" name="name"><br>
+        <label>Price:</label>
+        <input type="number" name="price"><br>
+        <label>Add Ons:</label>
+        <input type="text" name="addOn"><br>
+        <label>Allergens:</label>
+        <input type="text" name="allergens"><br>
+        <label>Description:</label>
+        <textarea name="description" cols="30" rows="10"></textarea><br>
+        <label>Image link:</label>
+        <input type="text" name="image"><br>
+        <input type="submit" value="Add Dish">
+    </table>
 </form>
 
 <%- include('../partials/footer') %>
