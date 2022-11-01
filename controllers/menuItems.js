@@ -9,7 +9,7 @@ module.exports = {
 }
 
 function index(req, res) {
-    Menu.find({}, function(err, menus) {
+    Menu.find({}, function(err, menuItems) {
         res.render('menuItems/index', { title: 'All Menu Items', menuItems });
     });
 }
