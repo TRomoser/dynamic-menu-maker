@@ -13,5 +13,7 @@ router.get('/new', ensureLoggedIn, menusCtrl.new);
 router.get('/:id', menusCtrl.show)
 // POST /menus (create functionality)
 router.post('/', ensureLoggedIn, menusCtrl.create)
+// DELETE /menus/:id (delete a menu)
+router.delete('/:id', ensureLoggedIn, menusCtrl.delete)
 
 module.exports = router;

@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<table>
+    <thead>
+        <th>Menu Name</th>
+        <th>Menu Type</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= menu.name %></td>
+            <td><%= menu.menuType %></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<form 
+action="/menus/<%= menu.id %>?_method=DELETE" 
+method="POST"
+id="delete-menu"
+>
+<button type="submit">Delete Menu</button>
+</form>
+
+<%- include('../partials/footer') %>

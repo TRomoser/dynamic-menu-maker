@@ -11,7 +11,7 @@ a {
 }
 
 .login img {
-  height: 30px;
+  height: 3vmin;
   filter: grayscale(1);
 }
 
@@ -30,7 +30,9 @@ nav > * {
 }
 
 #menu-icon {
-  width: 4vmin;
+  width: 3vmin;
+  /* background-color: white; */
+  /* border-radius: 1.5vmin; */
   filter: invert(1);
 }
 
@@ -40,12 +42,13 @@ form {
 }
 
 form > * {
-  width: 20%;
+  width: 30%;
+  min-height: 1.5vmin;
 }
 
 label, input, select {
   border: 1px solid rgb(85, 85, 85);
-  border-radius: 12px 0px 12px 0px;
+  border-radius: 12px 2px 12px 2px;
   padding: 5px;
   margin: 5px;
   color: azure;

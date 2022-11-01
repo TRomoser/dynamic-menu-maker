@@ -5,7 +5,8 @@ module.exports = {
     index,
     show,
     new: newMenu,
-    create
+    create,
+    delete: deleteMenu
 }
 
 function index(req, res) {
@@ -40,4 +41,12 @@ function create(req, res) {
         if (err) return res.redirect('/menus/new');
         res.redirect('/menus');
     });
+}
+
+function deleteMenu(req,res) {
+    Menu.findOneAndDelete(
+        {_id: req.params.id, user: req.user._id}, function(err) {
+            res.redirect('/menus');
+        }
+    );
 }
