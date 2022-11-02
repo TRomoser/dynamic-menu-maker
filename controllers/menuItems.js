@@ -6,6 +6,7 @@ module.exports = {
     new: newItem,
     create,
     addToMenu,
+    newMenuItem,
     edit,
     update,
     delete: deleteMenuItem
@@ -35,6 +36,17 @@ function addToMenu(req, res) {
             res.redirect(`/menus/${menu._id}`);
         });
     });
+}
+
+function newMenuItem(req, res) {
+    MenuItem.find({})
+        .sort('name')
+        .exec(function (err, menuItems) {
+            res.redner('menuItems/new', {
+                title: 'Add Menu Item',
+                menuItems
+            })
+        })
 }
 
 function edit(req, res) {

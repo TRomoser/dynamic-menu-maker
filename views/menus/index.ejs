@@ -20,11 +20,10 @@
                     </form>
                 </td>
                 <td>
-                    <form 
-                    action="/menus/<%= m.id %>?_method=DELETE" 
-                    method="POST"
-                    class="delete-form">
-                        <button type="submit">Delete Menu</button>
+                    <form action="/menus/<%= m.id %>/show" 
+                    method="GET" 
+                    class="show-form">
+                        <button type="submit">Show Menu</button>
                     </form>
                 </td>
             </tr>

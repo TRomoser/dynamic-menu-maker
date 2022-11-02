@@ -22,7 +22,8 @@ const menuSchema = new Schema({
   },
   contents: [{
     type: Schema.Types.ObjectId,
-    ref: 'MenuItems'
+    ref: 'MenuItems',
+    required: false
   }]
 }, {
     timestamps: true

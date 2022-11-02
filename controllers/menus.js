@@ -8,7 +8,7 @@ module.exports = {
     create,
     delete: deleteMenu,
     edit,
-    update
+    update,
 }
 
 function index(req, res) {
@@ -71,3 +71,21 @@ function update(req, res) {
         }
     );
 }
+
+// function show(req, res) {
+//     Menu.findById(req.params.id)
+//     .populate('contents')
+//     .exec(function(err, menu) {
+//         MenuItem.find(
+//             {_id: {$nin: menu.contents}},
+//             function(err, menuItems) {
+//                 console.log(menuItems);
+//                 res.render('menus/show', {
+//                     title: menu.name,
+//                     menu,
+//                     menuItems
+//                 })
+//             }
+//         )
+//     })
+// }
