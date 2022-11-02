@@ -1,5 +1,4 @@
 <%- include('../partials/header') %>
-<% if (user?._id.equals(post.user)) { %>
 <table id="menus">
     <thead>
         <tr>
@@ -9,6 +8,7 @@
     </thead>
     <tbody>
         <% menus.forEach(function(m) { %>
+            <% if (user?._id.equals(m.user)) { %>
             <tr>
                 <td><%= m.name %></td>
                 <td><%= m.menuType %></td>
@@ -27,10 +27,11 @@
                     </form>
                 </td>
             </tr>
+            <% } %>
             <% }); %>
     </tbody>
 </table>
-<% } %>
+
 <br><br>
 <hr>
 <br>
