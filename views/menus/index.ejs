@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<% if (user?._id.equals(post.user)) { %>
 <table id="menus">
     <thead>
         <tr>
@@ -30,6 +30,7 @@
             <% }); %>
     </tbody>
 </table>
+<% } %>
 <br><br>
 <hr>
 <br>

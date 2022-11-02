@@ -1,4 +1,6 @@
 <%- include('../partials/header') %>
+
+<% if (user?._id.equals(post.user)) { %>
 <table id="menu-item-table">
     <thead>
         <th>Name</th>
@@ -34,6 +36,7 @@
         <% }); %>
     </tbody>
 </table>
+<% } %>
 <br>
 <hr>
 <br>

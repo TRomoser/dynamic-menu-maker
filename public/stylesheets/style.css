@@ -2,6 +2,8 @@ body {
   padding: 50px;
   font-family: 'Barlow', sans-serif;
   background-color: rgb(28, 28, 28);
+  /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
+  height: 100vh; */
   color: azure;
 }
 
