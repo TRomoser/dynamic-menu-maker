@@ -10,10 +10,14 @@ router.get('/', menusCtrl.index);
 // GET /menus/new (display a form for making a new menu)
 router.get('/new', ensureLoggedIn, menusCtrl.new);
 // GET /menus/:id (show functionality)
-router.get('/:id', menusCtrl.show)
+router.get('/:id', menusCtrl.show);
 // POST /menus (create functionality)
-router.post('/', ensureLoggedIn, menusCtrl.create)
+router.post('/', ensureLoggedIn, menusCtrl.create);
 // DELETE /menus/:id (delete a menu)
-router.delete('/:id', ensureLoggedIn, menusCtrl.delete)
+router.delete('/:id', ensureLoggedIn, menusCtrl.delete);
+// GET /menus/:id/edit (edit a menu)
+router.get('/:id/edit', ensureLoggedIn, menusCtrl.edit);
+// PUT /menus/:id (update a menu) 
+router.put('/:id', ensureLoggedIn, menusCtrl.update)
 
 module.exports = router;

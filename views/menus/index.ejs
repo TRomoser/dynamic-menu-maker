@@ -13,6 +13,13 @@
                 <td><%= m.name %></td>
                 <td><%= m.menuType %></td>
                 <td>
+                    <form action="/menus/<%= m.id %>/edit" 
+                    method="GET" 
+                    class="edit-form">
+                        <button type="submit">Edit Menu</button>
+                    </form>
+                </td>
+                <td>
                     <form 
                     action="/menus/<%= m.id %>?_method=DELETE" 
                     method="POST"

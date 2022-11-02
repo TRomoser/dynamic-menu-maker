@@ -1,23 +1,32 @@
 <%- include('../partials/header') %>
-
-<% menuItems.forEach(function(mi) { %>
-    <tr>
-        <td><%= mi.name %></td>
-        <td>$<%= mi.price %></td>
-        <td><%= mi.description %></td>
-        <td><%= mi.addOn %></td>
-        <td><%= mi.allergens %></td>
-            <td>
-                <form 
-                action="/menuItems/<%= mi.id %>?_method=DELETE" 
-                method="POST"
-                class="delete-form">
-                    <input type="submit" value="Delete Menu Item"></input>
-                </form>
-            </td>
-    </tr>
-    <% }); %>
-</tbody>
+<table id="menu-item-table">
+    <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Add-Ons</th>
+        <th>Allergens</th>
+    </thead>
+    <tbody>
+    <% menuItems.forEach(function(mi) { %>
+        <tr>
+            <td><%= mi.name %></td>
+            <td>$<%= mi.price %></td>
+            <td><%- mi.description.replaceAll('\n', '<br>') %></td>
+            <td><%= mi.addOn %></td>
+            <td><%= mi.allergens %></td>
+                <td>
+                    <form 
+                    action="/menuItems/<%= mi.id %>?_method=DELETE" 
+                    method="POST"
+                    class="delete-form">
+                        <input type="submit" value="Delete Menu Item"></input>
+                    </form>
+                </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
 <br>
 <hr>
 <br>
@@ -32,7 +41,7 @@
         <label>Allergens:</label>
         <input type="text" name="allergens"><br>
         <label>Description:</label>
-        <textarea name="description" cols="30" rows="10"></textarea><br>
+        <textarea name="description" cols="30" rows="6"></textarea><br>
         <label>Image link:</label>
         <input type="text" name="image"><br>
         <input type="submit" value="Add Dish">

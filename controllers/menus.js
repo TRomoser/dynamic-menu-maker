@@ -6,7 +6,9 @@ module.exports = {
     show,
     new: newMenu,
     create,
-    delete: deleteMenu
+    delete: deleteMenu,
+    edit,
+    update
 }
 
 function index(req, res) {
@@ -47,6 +49,25 @@ function deleteMenu(req,res) {
     Menu.findOneAndDelete(
         {_id: req.params.id, user: req.user._id}, function(err) {
             res.redirect('/menus');
+        }
+    );
+}
+
+function edit(req, res) {
+    Menu.findOne({_id: req.params.id, user: req.user._id}, function(err, menu) {
+        if (err || !menu) return res.redirect('/menus');
+        res.render('menus/edit', { title: 'Edit Menu', menu});
+    });
+}
+
+function update(req, res) {
+    Menu.findOneAndUpdate(
+        {_id: req.params.id, user: req.user._id},
+        req.body,
+        {new: true},
+        function(err, menu) {
+            if (err || !menu) return res.redirect('/menus');
+            res.redirect(`/menus/${menu._id}`);
         }
     );
 }
