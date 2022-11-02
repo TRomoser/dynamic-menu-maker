@@ -5,7 +5,10 @@ module.exports = {
     index,
     new: newItem,
     create,
-    addToMenu
+    addToMenu,
+    edit,
+    update,
+    delete: deleteMenuItem
 }
 
 function index(req, res) {
@@ -34,6 +37,32 @@ function addToMenu(req, res) {
     });
 }
 
+function edit(req, res) {
+    MenuItem.findOne({_id: req.params.id, user: req.user._id}, function(err, menuItem) {
+        if (err || !menuItem) return res.redirect('/menuItems/index');
+        res.render('menuItems/edit', { title: 'Edit Menu Item', menuItem});
+    });
+}
+
+function update(req, res) {
+    MenuItem.findOneAndUpdate(
+        {_id: req.params.id, user: req.user._id},
+        req.body,
+        {new: true},
+        function(err, menuItem) {
+            if (err || !menuItem) return res.redirect('/menuItems');
+            res.redirect(`/menuItems`);
+        }
+    );
+}
+
+function deleteMenuItem(req, res) {
+    MenuItem.findOneAndDelete(
+        {_id: req.params.id, user: req.user._id}, function(err) {
+            res.redirect('/menuItems/index');
+        }
+    );
+}
 
 // function update(req, res) {
 //     req.body.active = !!req.body.active;

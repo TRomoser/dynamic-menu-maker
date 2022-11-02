@@ -13,5 +13,11 @@ router.get('/menuItems/new', ensureLoggedIn, menuItemsCtrl.new);
 router.post('/menuItems', ensureLoggedIn, menuItemsCtrl.create);
 // POST /menus/:id/menuItems (add menu items to menu)
 router.post('/menus/:id/menuItems', ensureLoggedIn, menuItemsCtrl.addToMenu);
+// DELETE menuItems/:id (delete a menu item)
+router.delete('/menuItems/:id', ensureLoggedIn, menuItemsCtrl.delete);
+// GET /menuItems/:id/edit (edit a menu item)
+router.get('/menuItems/:id/edit', ensureLoggedIn, menuItemsCtrl.edit);
+// PUT /menuItems/:id (update a menu item) 
+router.put('/menuItems/:id', ensureLoggedIn, menuItemsCtrl.update);
 
 module.exports = router;

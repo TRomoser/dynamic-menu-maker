@@ -15,14 +15,21 @@
             <td><%- mi.description.replaceAll('\n', '<br>') %></td>
             <td><%= mi.addOn %></td>
             <td><%= mi.allergens %></td>
-                <td>
-                    <form 
-                    action="/menuItems/<%= mi.id %>?_method=DELETE" 
-                    method="POST"
-                    class="delete-form">
-                        <input type="submit" value="Delete Menu Item"></input>
+            <td>
+                <form action="/menuItems/<%= mi.id %>/edit" 
+                    method="GET" 
+                    class="edit-form">
+                        <button type="submit">Edit Menu Item</button>
                     </form>
-                </td>
+            </td>
+            <td>
+                <form 
+                action="/menuItems/<%= mi.id %>?_method=DELETE" 
+                method="POST"
+                class="delete-form">
+                    <input type="submit" value="Delete Menu Item"></input>
+                </form>
+            </td>
         </tr>
         <% }); %>
     </tbody>

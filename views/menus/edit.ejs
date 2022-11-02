@@ -13,13 +13,24 @@
     </tbody>
 </table>
 
+<form id="edit-menu" action="/menus/<%= menu.id %>?_method=PUT" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" value="<%= menu.name %>">
+    <label>Menu Type:</label>
+        <select name="menuType">
+            <option value="Lunch">Lunch</option>
+            <option value="Happy Hour">Happy Hour</option>
+            <option value="Dinner">Dinner</option>
+        </select>
+        <input type="submit" value="Edit Menu">
+</form>
 
 <form 
 action="/menus/<%= menu.id %>?_method=DELETE" 
 method="POST"
 id="delete-menu"
 >
-<button type="submit">Delete Menu</button>
+    <button type="submit">Delete Menu</button>
 </form>
 
 <%- include('../partials/footer') %>

@@ -22,14 +22,6 @@ nav > a.active {
   cursor: default;
 }
 
-nav > a:hover:not(.active) {
-  color: white;
-  background-color: gray;
-}
-nav > a.active {
-  cursor: default;
-}
-
 button {
   width: 15%;
   background-color: rgb(85, 85, 85);
@@ -63,8 +55,6 @@ nav > * {
 
 #menu-icon {
   width: 3vmin;
-  /* background-color: white; */
-  /* border-radius: 1.5vmin; */
   filter: invert(1);
 }
 

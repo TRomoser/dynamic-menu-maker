@@ -67,7 +67,7 @@ function update(req, res) {
         {new: true},
         function(err, menu) {
             if (err || !menu) return res.redirect('/menus');
-            res.redirect(`/menus/${menu._id}`);
+            res.redirect(`/menus`);
         }
     );
 }
