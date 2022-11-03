@@ -25,12 +25,12 @@
         <input type="text" name="name" value="<%= menuItem.name %>"><br>
         <label>Price:</label>
         <input type="number" name="price" value="<%= menuItem.price %>"><br>
+        <label>Description:</label>
+        <textarea name="description" cols="30" rows="6"><%= menuItem.description %></textarea><br>
         <label>Add Ons:</label>
-        <input type="text" name="addOn" value="<%= menuItem.addOn %>"><br>
+        <textarea name="addOn" cols="30" rows=4><%= menuItem.addOn %></textarea><br>
         <label>Allergens:</label>
         <input type="text" name="allergens" value="<%= menuItem.allergens %>"><br>
-        <label>Description:</label>
-        <textarea name="description" cols="30" rows="10" placeholder="<=% menuItem.description %>"></textarea><br>
         <label>Image link:</label>
         <input type="text" name="image" value="<%= menuItem.image %>"><br>
         <input type="submit" value="Edit Dish">

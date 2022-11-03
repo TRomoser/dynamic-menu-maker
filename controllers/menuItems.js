@@ -35,7 +35,7 @@ function create(req,res) {
 }
 
 function addToMenu(req, res) {
-    Menu.findOne({_id: req.params.id}, function(err, menu) {
+    Menu.findById(req.params.id, function(err, menu) {
         menu.contents.push(req.body.menuItemId);
         menu.save(function(err) {
             res.redirect(`/menus/${menu._id}`);
@@ -49,7 +49,7 @@ function addToMenu(req, res) {
 //         .exec(function (err, menuItems) {
 //             res.render('menuItems/new', {
 //                 title: 'Add Menu Item',
-//                 menuItems
+//                 menuItemsr
 //             })
 //         })
 // }

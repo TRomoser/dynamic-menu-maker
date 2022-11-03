@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-
 <table id="menu-item-table">
     <thead>
         <th>Name</th>
@@ -25,14 +24,14 @@
                     <button type="submit">Edit</button>
                 </form>
             </td>
-            <td>
+            <!-- <td>
                 <form 
                 action="/menuItems/<%= mi.id %>?_method=DELETE" 
                 method="POST"
                 class="delete-form">
                     <button type="submit">Delete</button>
                 </form>
-            </td>
+            </td> -->
         </tr>
         <% } %>
     <% }); %>
@@ -43,19 +42,19 @@
 <br>
 <form id="new-menu-item" action="/menuItems" method="POST">
     <table>
-        <label>Name:</label>
+        <label for="name">Name:</label>
         <input type="text" name="name"><br>
-        <label>Price:</label>
-        <input type="number" name="price"><br>
-        <label>Add Ons:</label>
-        <input type="text" name="addOn"><br>
-        <label>Allergens:</label>
-        <input type="text" name="allergens"><br>
-        <label>Description:</label>
+        <label for="price">Price:</label>
+        <input type="number" name="price" placeholder="$"><br>
+        <label for="description">Description:</label>
         <textarea name="description" cols="30" rows="6"></textarea><br>
-        <label>Image link:</label>
+        <label for="addOn">Add Ons:</label>
+        <textarea name="addOn" cols="30" rows="4"></textarea><br>
+        <label for="allergens">Allergens:</label>
+        <input type="text" name="allergens"><br>
+        <label for="image">Image link:</label>
         <input type="text" name="image"><br>
-        <label>Menu Section</label>
+        <label for="menuSection">Menu Section</label>
         <select name="menuSection">
             <% menuSectionEnum.map(function(m) { %>
                 <option value="<%= m %>"><%= m %></option>

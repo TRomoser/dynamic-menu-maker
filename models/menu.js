@@ -24,7 +24,8 @@ const menuSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'MenuItems',
     required: true
-  }]
+  }],
+  visitorContents: []
 }, {
   timestamps: true
 });

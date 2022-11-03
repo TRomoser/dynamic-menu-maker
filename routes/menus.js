@@ -19,7 +19,7 @@ router.delete('/:id', ensureLoggedIn, menusCtrl.delete);
 router.get('/:id/edit', ensureLoggedIn, menusCtrl.edit);
 // PUT /menus/:id (update a menu) 
 router.put('/:id', ensureLoggedIn, menusCtrl.update);
-// GET /menus/:id/edit (show a menu)
+// GET /menus/:id/ (show a menu)
 router.get('/:id', ensureLoggedIn, menusCtrl.show);
 
 

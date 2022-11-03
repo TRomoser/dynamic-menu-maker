@@ -9,6 +9,7 @@ module.exports = {
     delete: deleteMenu,
     edit,
     update,
+    updateVistorMenu
 }
 
 function index(req, res) {
@@ -25,6 +26,7 @@ function index(req, res) {
 function show(req, res) {
     Menu.findById(req.params.id, function(err, menu) {
         MenuItem.find({menu: menu._id},function(err, menuItems) {
+            console.log(menuItems)
             res.render('menus/show', {
                 title: 'Menu Details',
                 menu,
@@ -75,22 +77,18 @@ function update(req, res) {
     );
 }
 
+async function updateVistorMenu(req, res) {
+    let newMenu = await Menu.findById(req.params.id).populate('contents').exec()
+    console.log(newMenu.contents);
+    Menu.findOne({_id: req.params.id}, function(err, menu) {
+    menu.visitorContents = newMenu.contents;
+    menu.save(function(err) {
+        console.log(menu);
+        res.redirect(`/menus/${req.params.id}`);
+        })
+    })
+}
 
+function showVisitorMenu(req, res) {
 
-// function show(req, res) {
-//     Menu.findById(req.params.id)
-//         .populate('contents')
-//         .exec(function(err, menu) {
-//             MenuItem.find(
-//                 {_id: {$nin: menu.contents}},
-//                 function(err, menuItems) {
-//                     console.log(menuItems);
-//                     res.render('menus/show', {
-//                         title: menu.name,
-//                         menu,
-//                         menuItems
-//                     })
-//                 }
-//             )
-//         })
-// }
+}

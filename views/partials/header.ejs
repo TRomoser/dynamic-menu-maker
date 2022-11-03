@@ -14,7 +14,10 @@
 <body>
   <h1>dM^2</h1>
   <nav>
-    <a href="/menus" <%- title === 'All Movies' ? 'class="active"' : '' %>>MENUS</a>
+    <% if (user) { %>
+      <a id="vistor-menu" href="/visitor">GUEST VIEW</a>
+    <% } %>
+    <a href="/menus" <%- title === 'All MOVIES' ? 'class="active"' : '' %>>MENUS</a>
     <% if (user) { %>
       <img id="menu-icon" src="https://cdn-icons-png.flaticon.com/512/2836/2836601.png">
       <a href="/menuItems/index"    <%- title === 'Add Menu Item' ? 'class="active"' : '' %>>
