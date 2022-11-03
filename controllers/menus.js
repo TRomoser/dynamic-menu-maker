@@ -4,7 +4,7 @@ const MenuItem = require('../models/menuItem');
 module.exports = {
     index,
     show,
-    new: newMenu,
+    // new: newMenu,
     create,
     delete: deleteMenu,
     edit,
@@ -34,9 +34,9 @@ function show(req, res) {
     });
 }
 
-function newMenu(req, res) {
-    res.render('menus/new', { title: 'Create a New Menu' });
-}
+// function newMenu(req, res) {
+//     res.render('menus/new', { title: 'Create a New Menu' });
+// }
 
 function create(req, res) {
     req.body.user = req.user._id;
@@ -74,6 +74,8 @@ function update(req, res) {
         }
     );
 }
+
+
 
 // function show(req, res) {
 //     Menu.findById(req.params.id)

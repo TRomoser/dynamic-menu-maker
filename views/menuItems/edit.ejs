@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-
 <table>
     <thead>
         <th>Name</th>
@@ -37,7 +36,6 @@
         <input type="submit" value="Edit Dish">
     </table>
 </form>
-
 <form 
 action="/menuItems/<%= menuItem.id %>?_method=DELETE" 
 method="POST"
@@ -45,7 +43,5 @@ id="delete-menu"
 >
     <button type="submit">Delete Menu Item</button>
 </form>
-
-
 
 <%- include('../partials/footer') %>

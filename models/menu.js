@@ -7,25 +7,26 @@ const menuSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true
-    },
+  },
   name: String,
   menuType: {
     type: String,
     require: true,
-    enum: ['Breakfast', 'Brunch', 'Lunch', 'Happy Hour', 'Dinner', 
-    'Dessert', 'Drink', 'Special'],
+    enum: ['Breakfast', 'Brunch', 'Lunch', 'Happy Hour', 'Dinner',
+      'Dessert', 'Drink', 'Special'],
     default: 'Dinner',
     available: {
-        type: Boolean,
-        default: false
+      type: Boolean,
+      default: false
     }
   },
   contents: [{
     type: Schema.Types.ObjectId,
-    ref: 'MenuItems'
+    ref: 'MenuItems',
+    required: true
   }]
 }, {
-    timestamps: true
+  timestamps: true
 });
 
 module.exports = mongoose.model('Menu', menuSchema);

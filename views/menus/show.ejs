@@ -10,12 +10,12 @@
         <th>Available?</th>
     </thead>
     <tbody>
-    <% menu.contents.forEach(function(mi) { %>
+    <% menuItems.map(function(mi) { %>
         <% if (user?._id.equals(menu.user)) { %>
         <tr>
             <td><%= mi.name %></td>
             <td>$<%= mi.price %></td>
-            <td><%- mi.description.replaceAll('\n', '<br>') %></td>
+            <td><%- mi.description %></td>
             <td><%= mi.addOn %></td>
             <td><%= mi.allergens %></td>
             <td> 
@@ -33,9 +33,9 @@
 <hr>
 <br>
 <form id="addToMenu" action="/menus/<%= menu._id %>/menuItems" method="POST">
-        <select name="name" id="">
-            <% menuItems.forEach(function(m) { %>
-                <option id="reverse" value="<%= m.name %>"><%= m.name %></option>
+        <select name="menuItemId" id="">
+            <% menuItems.map(function(m) { %>
+                <option id="reverse" value="<%= m._id %>"><%= m.name %></option>
             <% }); %>
         </select>
     <input type="submit" value="Add to Menu">

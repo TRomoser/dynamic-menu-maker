@@ -10,7 +10,7 @@ const { menus } = require('../data');
 // GET /menus (display all menus)
 router.get('/', ensureLoggedIn, menusCtrl.index);
 // GET /menus/new (display a form for making a new menu)
-router.get('/new', ensureLoggedIn, menusCtrl.new);
+// router.get('/new', ensureLoggedIn, menusCtrl.new);
 // POST /menus (create functionality)
 router.post('/', ensureLoggedIn, menusCtrl.create);
 // DELETE /menus/:id (delete a menu)
@@ -20,6 +20,7 @@ router.get('/:id/edit', ensureLoggedIn, menusCtrl.edit);
 // PUT /menus/:id (update a menu) 
 router.put('/:id', ensureLoggedIn, menusCtrl.update);
 // GET /menus/:id/edit (show a menu)
-router.get('/:id/show', ensureLoggedIn, menusCtrl.show);
+router.get('/:id', ensureLoggedIn, menusCtrl.show);
+
 
 module.exports = router;

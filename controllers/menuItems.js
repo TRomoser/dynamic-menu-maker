@@ -1,12 +1,12 @@
-const Menu = require('../models/menuItem');
+const Menu = require('../models/menu');
 const MenuItem = require('../models/menuItem');
 
 module.exports = {
     index,
-    new: newItem,
+    // new: newItem,
     create,
     addToMenu,
-    newMenuItem,
+    // newMenuItem,
     edit,
     update,
     delete: deleteMenuItem
@@ -23,9 +23,9 @@ function index(req, res) {
     });
 }
 
-function newItem(req, res) {
-    res.render('menuItems/index', { title:'Add Dish' });
-}
+// function newItem(req, res) {
+//     res.render('menuItems/index', { title:'Add Dish' });
+// }
 
 function create(req,res) {
     req.body.user = req.user._id;
@@ -35,7 +35,7 @@ function create(req,res) {
 }
 
 function addToMenu(req, res) {
-    Menu.findById(req.params.id, function(err, menu) {
+    Menu.findOne({_id: req.params.id}, function(err, menu) {
         menu.contents.push(req.body.menuItemId);
         menu.save(function(err) {
             res.redirect(`/menus/${menu._id}`);
@@ -43,16 +43,16 @@ function addToMenu(req, res) {
     });
 }
 
-function newMenuItem(req, res) {
-    MenuItem.find({})
-        .sort('name')
-        .exec(function (err, menuItems) {
-            res.redner('menuItems/new', {
-                title: 'Add Menu Item',
-                menuItems
-            })
-        })
-}
+// function newMenuItem(req, res) {
+//     MenuItem.find({})
+//         .sort('name')
+//         .exec(function (err, menuItems) {
+//             res.render('menuItems/new', {
+//                 title: 'Add Menu Item',
+//                 menuItems
+//             })
+//         })
+// }
 
 function edit(req, res) {
     MenuItem.findOne({_id: req.params.id, user: req.user._id}, function(err, menuItem) {
@@ -68,7 +68,7 @@ function update(req, res) {
         {new: true},
         function(err, menuItem) {
             if (err || !menuItem) return res.redirect('/menuItems');
-            res.redirect(`/menuItems`);
+            res.redirect('/menuItems/index');
         }
     );
 }
