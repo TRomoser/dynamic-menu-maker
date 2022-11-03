@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<% if (user?._id.equals(menuItems.user)) { %>
+
 <table id="menu-item-table">
     <thead>
         <th>Name</th>
@@ -11,6 +11,7 @@
     </thead>
     <tbody>
     <% menuItems.forEach(function(mi) { %>
+        <% if (user?._id.equals(mi.user)) { %>
         <tr>
             <td><%= mi.name %></td>
             <td>$<%= mi.price %></td>
@@ -19,24 +20,24 @@
             <td><%= mi.allergens %></td>
             <td>
                 <form action="/menuItems/<%= mi.id %>/edit" 
-                    method="GET" 
-                    class="edit-form">
-                        <button type="submit">Edit Menu Item</button>
-                    </form>
+                method="GET" 
+                class="edit-form">
+                    <button type="submit">Edit</button>
+                </form>
             </td>
             <td>
                 <form 
                 action="/menuItems/<%= mi.id %>?_method=DELETE" 
                 method="POST"
                 class="delete-form">
-                    <input type="submit" value="Delete Menu Item"></input>
+                    <button type="submit">Delete</button>
                 </form>
             </td>
         </tr>
-        <% }); %>
+        <% } %>
+    <% }); %>
     </tbody>
 </table>
-<% } %>
 <br>
 <hr>
 <br>
@@ -54,6 +55,12 @@
         <textarea name="description" cols="30" rows="6"></textarea><br>
         <label>Image link:</label>
         <input type="text" name="image"><br>
+        <label>Menu Section</label>
+        <select name="menuSection">
+            <% menuSectionEnum.map(function(m) { %>
+                <option value="<%= m %>"><%= m %></option>
+            <% }); %>
+        </select>
         <input type="submit" value="Add Dish">
     </table>
 </form>

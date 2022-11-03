@@ -13,18 +13,21 @@ module.exports = {
 
 function index(req, res) {
     Menu.find({}, function(err, menus) {
-        res.render('menus/index', { title: 'All Menus', menus });
+        let menuTypeEnum = Menu.schema.obj.menuType.enum;
+        res.render('menus/index', { 
+            title: 'All Menus', 
+            menus,
+            menuTypeEnum
+         });
     });
 }
 
 function show(req, res) {
     Menu.findById(req.params.id, function(err, menu) {
         MenuItem.find({menu: menu._id},function(err, menuItems) {
-            let menuTypeEnum = menu.schema.obj.menuType.enum;
             res.render('menus/show', {
                 title: 'Menu Details',
                 menu,
-                menuTypeEnum,
                 menuItems
             });
         });
@@ -67,25 +70,25 @@ function update(req, res) {
         {new: true},
         function(err, menu) {
             if (err || !menu) return res.redirect('/menus');
-            res.redirect(`/menus`);
+            res.redirect('/menus');
         }
     );
 }
 
 // function show(req, res) {
 //     Menu.findById(req.params.id)
-//     .populate('contents')
-//     .exec(function(err, menu) {
-//         MenuItem.find(
-//             {_id: {$nin: menu.contents}},
-//             function(err, menuItems) {
-//                 console.log(menuItems);
-//                 res.render('menus/show', {
-//                     title: menu.name,
-//                     menu,
-//                     menuItems
-//                 })
-//             }
-//         )
-//     })
+//         .populate('contents')
+//         .exec(function(err, menu) {
+//             MenuItem.find(
+//                 {_id: {$nin: menu.contents}},
+//                 function(err, menuItems) {
+//                     console.log(menuItems);
+//                     res.render('menus/show', {
+//                         title: menu.name,
+//                         menu,
+//                         menuItems
+//                     })
+//                 }
+//             )
+//         })
 // }

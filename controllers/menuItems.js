@@ -13,8 +13,13 @@ module.exports = {
 }
 
 function index(req, res) {
-    Menu.find({}, function(err, menuItems) {
-        res.render('menuItems/index', { title: 'All Menu Items', menuItems });
+    MenuItem.find({}, function(err, menuItems) {
+        let menuSectionEnum = MenuItem.schema.obj.menuSection.enum
+        res.render('menuItems/index', { 
+            title: 'All Menu Items', 
+            menuItems,
+            menuSectionEnum
+        });
     });
 }
 
@@ -75,9 +80,3 @@ function deleteMenuItem(req, res) {
         }
     );
 }
-
-// function update(req, res) {
-//     req.body.active = !!req.body.active;
-//     Skill.update(req.params.id, req.body);
-//     res.redirect(`/skills/${req.params.id}`);
-// }

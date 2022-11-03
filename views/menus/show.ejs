@@ -1,10 +1,44 @@
 <%- include('../partials/header') %>
 
+<table id="menu-table">
+    <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Add-Ons</th>
+        <th>Allergens</th>
+        <th>Available?</th>
+    </thead>
+    <tbody>
+    <% menu.contents.forEach(function(mi) { %>
+        <% if (user?._id.equals(menu.user)) { %>
+        <tr>
+            <td><%= mi.name %></td>
+            <td>$<%= mi.price %></td>
+            <td><%- mi.description.replaceAll('\n', '<br>') %></td>
+            <td><%= mi.addOn %></td>
+            <td><%= mi.allergens %></td>
+            <td> 
+                <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" name="available">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Available?</label>
+                </div>
+            </td>
+            </tr>
+            <% } %>
+        <% }); %>
+    </tbody>
+</table>
+<br>
+<hr>
+<br>
+<form id="addToMenu" action="/menus/<%= menu._id %>/menuItems" method="POST">
+        <select name="name" id="">
+            <% menuItems.forEach(function(m) { %>
+                <option id="reverse" value="<%= m.name %>"><%= m.name %></option>
+            <% }); %>
+        </select>
+    <input type="submit" value="Add to Menu">
+</form>
 
-
-
-<div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-    <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-</div>
 <%- include('../partials/footer') %>

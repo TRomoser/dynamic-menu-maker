@@ -22,11 +22,10 @@ const menuSchema = new Schema({
   },
   contents: [{
     type: Schema.Types.ObjectId,
-    ref: 'MenuItems',
-    required: false
+    ref: 'MenuItems'
   }]
 }, {
     timestamps: true
-})
+});
 
 module.exports = mongoose.model('Menu', menuSchema);

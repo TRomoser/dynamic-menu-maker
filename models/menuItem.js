@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const menuItemSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+        },
     name: {
         type: String,
         required: true
@@ -20,10 +25,16 @@ const menuItemSchema = new Schema({
     //     required: false
     // },
     allergens: String,
-    // menu: [{
-    //     ref: 'Menu',
-    //     type: Schema.Types.ObjectId
-    // }]
+    menuSection: {
+        type: String,
+        require: true,
+        enum: ['Starter', 'Main', 'Side', 'Dessert'],
+        default: 'Main'
+    },
+    available: {
+        type: Boolean,
+        default: true
+    }
 }, {
     timestamps: true
 })
