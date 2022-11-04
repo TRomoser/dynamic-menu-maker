@@ -6,11 +6,11 @@ This app is a dynamic menu maker for the restaurant industry. It allows a owner/
 
 ![Landing Page](https://i.imgur.com/5o3bFPC.png)
 
-![Menu Item Page](https://i.imgur.com/chf8lxR.png)
+![All Menu Page](https://i.imgur.com/mLrM3bF.png)
+
+![All Menu Item Page](https://i.imgur.com/8HIPG1l.png)
 
 ![Add Item Form](https://i.imgur.com/RMXRU6n.png)
-
-![Add New Menu](https://i.imgur.com/nlWw7pd.png)
 
 ## Technologies Used
 
