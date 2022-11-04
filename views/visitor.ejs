@@ -1,5 +1,20 @@
 <%- include('../partials/header') %>
 
-<h3>Hello</h3>
+<h2><%= menu.name =></h2>
+
+<tbody>
+    <% menu.contents.map(function(mi) { %>
+        <tr>
+            <td><%= mi.name %></td>
+            <td>$<%= mi.price %></td>
+            <td><%- mi.description.replaceAll('\n', '<br>') %></td>
+            <% if (mi.addOn) { %>
+                <td><%= mi.addOn %></td>
+            <% }; %>
+            <% if (mi.allergens) { %>
+                <td><%= mi.allergens %></td>
+            <% }; %>
+        </tr>
+</tbody>
 
 <%- include('../partials/footer') %>

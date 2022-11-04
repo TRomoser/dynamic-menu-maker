@@ -25,7 +25,6 @@ function index(req, res) {
 
 function show(req, res) {
     Menu.findById(req.params.id).populate('contents').exec(function(err, menu) {
-        console.log(menu);
         MenuItem.find({menu: menu._id},function(err, menuItems) {
             res.render('menus/show', {
                 title: 'Menu Details',
@@ -87,6 +86,10 @@ async function updateVistorMenu(req, res) {
         res.redirect(`/menus/${req.params.id}`);
         })
     })
+}
+
+function showVisitor(req, res) {
+    
 }
 
 // function showVisitorMenu(req, res) {

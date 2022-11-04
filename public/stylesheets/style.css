@@ -2,8 +2,6 @@ body {
   padding: 50px;
   font-family: 'Barlow', sans-serif;
   background-color: rgb(28, 28, 28);
-  /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
-  height: 100vh; */
   color: azure;
 }
 
@@ -141,4 +139,16 @@ td {
   border-radius: .3rem;
   font-size: .8rem;
   text-align: center;
+}
+
+footer > p {
+  position: fixed;
+  color: rgb(106, 106, 106);
+  right: 0;
+  bottom: 0;
+  margin: 2%;
+  background-color: rgb(28, 28, 28);
+  font-size: 1vmin;
+  border: 1px solid rgb(28, 28, 28);
+  border-radius: 3px;
 }

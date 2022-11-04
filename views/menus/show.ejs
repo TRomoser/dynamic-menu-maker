@@ -20,9 +20,10 @@
             <td><%= mi.allergens %></td>
             <td> 
                 <div class="form-check form-switch">
-                <form action="/menus/<%= menu.id %>">
+                <!-- <form action="/menus/<%= menu.id %>">
                 <label class="form-check-label" for="flexSwitchCheckDefault">Available?</label>
-                <input class="form-check-input" type="checkbox" name="checkbox" role="switch" id="flexSwitchCheckDefault" name="available">
+                <input class="form-check-input" type="checkbox" name="checkbox" role="switch" id="flexSwitchCheckDefault" name="available"> -->
+                <button>on off</button>
                 </form>
                 </div>
             </td>
@@ -41,6 +42,11 @@
             <% }); %>
         </select>
     <input type="submit" value="Add to Menu">
+</form>
+<br>
+<br>
+<form action="/menus/<%= menu._id %>" method="POST">
+    <button type="submit">Render Menu</button>
 </form>
 
 <%- include('../partials/footer') %>
