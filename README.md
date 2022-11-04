@@ -35,7 +35,7 @@ This app is a dynamic menu maker for the restaurant industry. It allows a owner/
 
 2. Responsiveness. I would like the app to look good on desktop, tablet, and mobile platforms.
 
-3. Render Menu To QR Code. I would like the user feature to click a button to render a menu to a page that is accesible by patrons of the restauraunt, and for that menu to dynamically change based on the users input.
+3. Render Menu To QR Code. As a user, I would like to click a button to render a menu to a page that is accesible by patrons of the restauraunt, and for that menu to dynamically change based on my input.
 
 4. 86 product. As a user, I would like to have checkboxes or switches to mark an item as available or unavailable. If unavailable the item would not render to the guest menu.
 
