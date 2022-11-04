@@ -29,6 +29,8 @@ This app is a dynamic menu maker for the restaurant industry. It allows a owner/
 
 [Visit Dynamic Menu Maker](https://dynamic-menu-maker.herokuapp.com/menuItems/index)
 
+[Trello Planning Page](https://trello.com/b/qsp4CNMA/tromoser-dynamicmenumaker)
+
 ## Next Steps
 
 1. User Profiles. As a user, I would like the ability to create and edit my user profile and be able to link multiple users to the same menu.
