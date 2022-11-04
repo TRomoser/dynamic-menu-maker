@@ -22,7 +22,7 @@
             <option value="Happy Hour">Happy Hour</option>
             <option value="Dinner">Dinner</option>
         </select>
-        <input type="submit" value="Edit Menu">
+        <input id="edit-menu-button" type="submit" value="Edit Menu">
 </form>
 
 <form 
@@ -30,7 +30,7 @@ action="/menus/<%= menu.id %>?_method=DELETE"
 method="POST"
 id="delete-menu"
 >
-    <button type="submit">Delete Menu</button>
+    <button id="edit-delete" type="submit">Delete Menu</button>
 </form>
 
 <%- include('../partials/footer') %>

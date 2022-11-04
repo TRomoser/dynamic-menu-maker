@@ -7,8 +7,6 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // GET /menuItems (display all menu items)
 router.get('/menuItems/index', ensureLoggedIn, menuItemsCtrl.index);
-// GET /menuItems/new (display a form for entering a new menu item)
-// router.get('/menuItems/new', ensureLoggedIn, menuItemsCtrl.new);
 // POST /menuItems (create new menu item)
 router.post('/menuItems', ensureLoggedIn, menuItemsCtrl.create);
 // DELETE menuItems/:id (delete a menu item)

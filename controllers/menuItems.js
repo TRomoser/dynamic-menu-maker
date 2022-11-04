@@ -3,10 +3,8 @@ const MenuItem = require('../models/menuItem');
 
 module.exports = {
     index,
-    // new: newItem,
     create,
     addToMenu,
-    // newMenuItem,
     edit,
     update,
     delete: deleteMenuItem
@@ -23,10 +21,6 @@ function index(req, res) {
     });
 }
 
-// function newItem(req, res) {
-//     res.render('menuItems/index', { title:'Add Dish' });
-// }
-
 function create(req,res) {
     req.body.user = req.user._id;
     MenuItem.create(req.body, function(err, menuItem) {
@@ -42,17 +36,6 @@ function addToMenu(req, res) {
         });
     });
 }
-
-// function newMenuItem(req, res) {
-//     MenuItem.find({})
-//         .sort('name')
-//         .exec(function (err, menuItems) {
-//             res.render('menuItems/new', {
-//                 title: 'Add Menu Item',
-//                 menuItemsr
-//             })
-//         })
-// }
 
 function edit(req, res) {
     MenuItem.findOne({_id: req.params.id, user: req.user._id}, function(err, menuItem) {

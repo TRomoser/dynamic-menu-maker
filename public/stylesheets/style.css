@@ -22,6 +22,39 @@ nav > a.active {
   cursor: default;
 }
 
+nav {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(85, 85, 85);
+  border: 1px solid rgb(85, 85, 85);
+  border-radius: 40px 2px 40px 2px;
+}
+
+.log-link {
+  border: 1px solid rgba(85, 85, 85, 0);
+  border-radius: 0px 0px 40px 0px;
+}
+
+nav > * {
+  display: flex;
+  align-items: center;
+  padding: 0.5vmin;
+}
+
+#menu-icon {
+  height: 4.5vmin;
+  filter: invert(1);
+}
+
+
+#logo-img {
+  opacity: 0.8;
+  border-radius: 60%;
+  box-shadow: 0px 10px 20px -5px rgba(0,0,0,1); 
+}
+
 #home-title {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
@@ -47,6 +80,48 @@ nav > a.active {
   margin: 0 3vw 0 4vw;
 }
 
+@keyframes bgScroll {
+  0% {
+    background-position : 0px 0px
+  }
+  100% {
+    background-position : 0px -808px
+  }
+}
+
+.examples {
+  display: flex;
+  justify-content: space-between;
+}
+
+#example-menu1 {
+  position: relative;
+  top: 40vmin;
+  bottom: 15vmin;
+  filter: grayscale(1);
+  opacity: 0.8;
+  width: 40vw;
+  height: 40vh;
+  background: url("https://richmaidrestaurant.com/wp-content/uploads/2022/03/1.jpg");
+  animation: bgScroll 20s linear infinite;
+  border-radius: 2vmin;
+  box-shadow: 0px 10px 20px -5px rgba(0,0,0,1);
+  -webkit-mask-image: -webkit-gradient(linear, left 90%, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))  
+}
+
+#example-menu2 {
+  position: relative;
+  filter: grayscale(1);
+  opacity: 0.8;
+  width: 40vw;
+  height: 40vh;
+  background: url("https://i.pinimg.com/originals/c8/91/87/c8918775a6564cd3f706b7cca0b9f22b.jpg");
+  animation: bgScroll 20s linear infinite;
+  border-radius: 2vmin;
+  box-shadow: 0px 10px 20px -5px rgba(0,0,0,1);
+  -webkit-mask-image: -webkit-gradient(linear, left 90%, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
+}
+
 button {
   width: 30%;
   padding: .2vmin;
@@ -60,28 +135,14 @@ button {
   width: 100%;
 }
 
-nav {
-  display: flex;
-  justify-content: flex-end;
-  background-color: rgb(85, 85, 85);
+#edit-menu-button {
   border: 1px solid rgb(85, 85, 85);
-  border-radius: 40px 2px 40px 2px;
+  border-radius: 6px 6px 0 0;
 }
 
-.log-link {
-  border: 1px solid rgba(85, 85, 85, 0);
-  border-radius: 0px 0px 40px 0px;
-}
-
-nav > * {
-  display: flex;
-  align-items: center;
-  padding: 0.5vmin;
-}
-
-#menu-icon {
-  height: 4.5vmin;
-  filter: invert(1);
+#edit-delete {
+  margin: 0px 0px 0px .5vmin;
+  border-radius: 0px 0px .4vmin .4vmin;
 }
 
 form {

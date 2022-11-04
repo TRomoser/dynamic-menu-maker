@@ -4,12 +4,12 @@ const MenuItem = require('../models/menuItem');
 module.exports = {
     index,
     show,
-    // new: newMenu,
     create,
     delete: deleteMenu,
     edit,
     update,
-    updateVistorMenu
+    // updateVistorMenu,
+    // showVisitor
 }
 
 function index(req, res) {
@@ -76,21 +76,21 @@ function update(req, res) {
     );
 }
 
-async function updateVistorMenu(req, res) {
-    let newMenu = await Menu.findById(req.params.id).populate('contents').exec()
-    console.log(newMenu.contents);
-    Menu.findOne({_id: req.params.id}, function(err, menu) {
-    menu.visitorContents = newMenu.contents;
-    menu.save(function(err) {
-        console.log(menu);
-        res.redirect(`/menus/${req.params.id}`);
-        })
-    })
-}
+// async function updateVistorMenu(req, res) {
+//     let newMenu = await Menu.findById(req.params.id).populate('contents').exec()
+//     console.log(newMenu.contents);
+//     Menu.findOne({_id: req.params.id}, function(err, menu) {
+//     menu.visitorContents = newMenu.contents;
+//     menu.save(function(err) {
+//         console.log(menu);
+//         res.redirect(`/menus/${req.params.id}`);
+//         })
+//     })
+// }
 
-function showVisitor(req, res) {
+// function showVisitor(req, res) {
     
-}
+// }
 
 // function showVisitorMenu(req, res) {
 

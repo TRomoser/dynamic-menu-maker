@@ -11,8 +11,6 @@ const { menus } = require('../data');
 router.get('/', ensureLoggedIn, menusCtrl.index);
 // GET /menus/:id/ (show a menu)
 router.get('/:id', ensureLoggedIn, menusCtrl.show);
-// GET /menus/new (display a form for making a new menu)
-// router.get('/new', ensureLoggedIn, menusCtrl.new);
 // POST /menus (create functionality)
 router.post('/', ensureLoggedIn, menusCtrl.create);
 // DELETE /menus/:id (delete a menu)
@@ -21,6 +19,5 @@ router.delete('/:id', ensureLoggedIn, menusCtrl.delete);
 router.get('/:id/edit', ensureLoggedIn, menusCtrl.edit);
 // PUT /menus/:id (update a menu) 
 router.put('/:id', ensureLoggedIn, menusCtrl.update);
-
 
 module.exports = router;
