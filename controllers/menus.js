@@ -35,10 +35,6 @@ function show(req, res) {
     });
 }
 
-// function newMenu(req, res) {
-//     res.render('menus/new', { title: 'Create a New Menu' });
-// }
-
 function create(req, res) {
     req.body.user = req.user._id;
     const menu = new Menu(req.body);

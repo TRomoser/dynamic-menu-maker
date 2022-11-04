@@ -20,10 +20,6 @@ const menuItemSchema = new Schema({
     description: String,
     image: String,
     addOn: [String],
-    // addOnPrice: {
-    //     type: Number,
-    //     required: false
-    // },
     allergens: String,
     menuSection: {
         type: String,
