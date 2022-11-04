@@ -42,3 +42,5 @@ This app is a dynamic menu maker for the restaurant industry. It allows a owner/
 4. 86 product. As a user, I would like to have checkboxes or switches to mark an item as available or unavailable. If unavailable the item would not render to the guest menu.
 
 5. Food/Drink Pairings. As a user, I would like to have a separate beverage menu, and be able to link drinks with certain menu items for pairings and upselling.
+
+6. Custom CSS templates. As a user, I would like to have a selection of CSS templates to personalize the visitor menu. I would like a drop down list and an example of each CSS template.
