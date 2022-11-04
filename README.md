@@ -31,12 +31,12 @@ This app is a dynamic menu maker for the restaurant industry. It allows a owner/
 
 ## Next Steps
 
-1. User Profiles. I would like the ability to create and edit your user profile and be able to link multiple users to the same menu.
+1. User Profiles. As a user, I would like the ability to create and edit my user profile and be able to link multiple users to the same menu.
 
 2. Responsiveness. I would like the app to look good on desktop, tablet, and mobile platforms.
 
 3. Render Menu To QR Code. I would like the user feature to click a button to render a menu to a page that is accesible by patrons of the restauraunt, and for that menu to dynamically change based on the users input.
 
-4. 86 product. I would like to have checkboxes or switches to mark an item as available or unavailable. If unavailable the item would not render to the guest menu.
+4. 86 product. As a user, I would like to have checkboxes or switches to mark an item as available or unavailable. If unavailable the item would not render to the guest menu.
 
-5. Food/Drink Pairings. I would like to have a separate beverage menu that the user would be able to link drinks with certain menu items for pairings and upselling.
+5. Food/Drink Pairings. As a user, I would like to have a separate beverage menu, and be able to link drinks with certain menu items for pairings and upselling.
