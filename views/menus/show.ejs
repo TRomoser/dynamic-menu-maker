@@ -10,7 +10,7 @@
         <th>Available?</th>
     </thead>
     <tbody>
-    <% menuItems.map(function(mi) { %>
+    <% menu.contents.map(function(mi) { %>
         <% if (user?._id.equals(menu.user)) { %>
         <tr>
             <td><%= mi.name %></td>

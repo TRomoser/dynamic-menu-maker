@@ -22,7 +22,7 @@ const menuSchema = new Schema({
   },
   contents: [{
     type: Schema.Types.ObjectId,
-    ref: 'MenuItems',
+    ref: 'MenuItem',
     required: true
   }],
   visitorContents: []
